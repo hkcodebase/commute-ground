@@ -1,5 +1,6 @@
 package org.example;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,5 +22,10 @@ public class MainTest {
     void helloWorldTest(){
         Main.main(new String[]{});
         assertEquals(outputStream.toString(), "Hello World\r\n") ;
+    }
+
+    @AfterEach
+    public void destroy() {
+        System.setOut(System.out);
     }
 }
